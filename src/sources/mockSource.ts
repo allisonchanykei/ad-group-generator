@@ -1,6 +1,6 @@
 import { ISource } from './ISource';
 
-export class MocksSource implements ISource {
+export class MockSource implements ISource {
     adjectives: string[];
     cores: string[];
     coreJobTitles: string[];
