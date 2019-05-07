@@ -12,11 +12,11 @@ export interface IKeyword {
 }
 
 export class AdGroup {
-    positiveKeyword: IKeyword;
+    positiveKeywords: IKeyword[];
     negativeKeywords: IKeyword[];
 
     constructor(keywordsGenerator: IKeywordsGenerator) {
-        this.positiveKeyword = keywordsGenerator.positive();
+        this.positiveKeywords = keywordsGenerator.positive();
         this.negativeKeywords = keywordsGenerator.negative();
     }
 }

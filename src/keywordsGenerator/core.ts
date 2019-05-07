@@ -3,19 +3,15 @@ import { ISource } from '../sources/ISource';
 import { IKeyword, KeywordType } from '../adGroup';
 
 export class Core implements IKeywordsGenerator {
-    private source: ISource;
-    private adWord: string;
+    constructor(private adWord: string, private source: ISource) {}
 
-    constructor(adWord: string, source: ISource) {
-        this.source = source;
-        this.adWord = adWord;
-    }
-
-    positive(): IKeyword {
-        return {
-            word: this.adWord,
-            type: KeywordType.phrase
-        };
+    positive(): IKeyword[] {
+        return [
+            {
+                word: this.adWord,
+                type: KeywordType.phrase
+            }
+        ];
     }
 
     negative(): IKeyword[] {
