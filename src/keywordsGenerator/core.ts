@@ -2,7 +2,7 @@ import { IKeywordsGenerator } from './IKeywordsGenerator';
 import { ISource } from '../sources/ISource';
 import { IKeyword, KeywordType } from '../adGroup';
 
-export class CoreKeywordsGenerator implements IKeywordsGenerator {
+export class Core implements IKeywordsGenerator {
     private source: ISource;
     private adWord: string;
 
@@ -26,7 +26,14 @@ export class CoreKeywordsGenerator implements IKeywordsGenerator {
             }
         ];
 
-        const remainingNegativeKeywords: IKeyword[] = this.remainingSource().map(
+        const negativePhrases = this.source.coreJobTitles.concat(
+            this.source.adjectives,
+            this.source.coreExpansions,
+            this.source.serviceProviders,
+            this.source.transactionals
+        );
+
+        const remainingNegativeKeywords: IKeyword[] = negativePhrases.map(
             word =>
                 <IKeyword>{
                     word: word,
@@ -35,14 +42,5 @@ export class CoreKeywordsGenerator implements IKeywordsGenerator {
         );
 
         return negativeKeywords.concat(remainingNegativeKeywords);
-    }
-
-    private remainingSource(): String[] {
-        return this.source.coreJobTitles.concat(
-            this.source.adjectives,
-            this.source.coreExpansions,
-            this.source.serviceProviders,
-            this.source.transactionals
-        );
     }
 }
