@@ -24,13 +24,13 @@ export class MockSource implements ISource {
         return ['core1', 'core2'];
     }
     private getCoreJobTitles() {
-        return ['coreJobTitle1', 'coreJobTitle2'];
+        return ['jobTitle1', 'jobTitle2'];
     }
     private getServiceExpansions() {
-        return ['core1expansion', 'core2expansion'];
+        return ['expansion1', 'expansion2'];
     }
     private getServiceProviders() {
-        return ['company', 'service'];
+        return ['sp1', 'sp2'];
     }
     private getTransactionals() {
         return ['location1', 'location2'];
