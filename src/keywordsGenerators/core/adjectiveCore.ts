@@ -1,5 +1,5 @@
-import { ISource } from '../sources/ISource';
-import { AandB } from './aAndB';
+import { ISource } from '../../sources/ISource';
+import { AandB } from '../aAndB';
 
 export class AdjectiveCore extends AandB {
     constructor(core: string, adjective: string, source: ISource) {

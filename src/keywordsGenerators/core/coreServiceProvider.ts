@@ -1,5 +1,5 @@
-import { ISource } from '../sources/ISource';
-import { AandB } from './aAndB';
+import { ISource } from '../../sources/ISource';
+import { AandB } from '../aAndB';
 
 export class CoreServiceProvider extends AandB {
     constructor(core: string, serviceProvider: string, source: ISource) {

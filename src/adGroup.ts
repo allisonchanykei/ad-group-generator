@@ -1,4 +1,4 @@
-import { IKeywordsGenerator } from './keywordsGenerator/IKeywordsGenerator';
+import { IKeywordsGenerator } from './keywordsGenerators/IKeywordsGenerator';
 
 export enum KeywordType {
     phrase = 'phrase',

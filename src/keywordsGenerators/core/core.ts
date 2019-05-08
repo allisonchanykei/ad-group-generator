@@ -1,6 +1,6 @@
-import { IKeywordsGenerator } from './IKeywordsGenerator';
-import { ISource } from '../sources/ISource';
-import { IKeyword, KeywordType } from '../adGroup';
+import { IKeywordsGenerator } from '../IKeywordsGenerator';
+import { ISource } from '../../sources/ISource';
+import { IKeyword, KeywordType } from '../../adGroup';
 
 export class Core implements IKeywordsGenerator {
     constructor(private adWord: string, private source: ISource) {}
