@@ -5,6 +5,7 @@ import { Core } from './keywordsGenerator/core';
 import { AdjectiveCore } from './keywordsGenerator/adjectiveCore';
 import { CoreServiceProvider } from './keywordsGenerator/coreServiceProvider';
 import { CoreTransactional } from './keywordsGenerator/coreTransactional';
+import { AdjectiveCoreTransactional } from './keywordsGenerator/adjectiveCoreTransactional';
 
 function myFunction() {
     const source: ISource = new MockSource();
@@ -14,6 +15,10 @@ function myFunction() {
 
         source.adjectives.map(adjective => {
             adGroups.push(new AdGroup(new AdjectiveCore(core, adjective, source)));
+
+            source.transactionals.map(transactional => {
+                adGroups.push(new AdGroup(new AdjectiveCoreTransactional(core, adjective, transactional)));
+            });
         });
 
         source.serviceProviders.map(serviceProvider => {
