@@ -1,13 +1,13 @@
 import { IKeywordsGenerator } from './IKeywordsGenerator';
 import { IKeyword, KeywordType } from '../adGroup';
 
-export class AandB implements IKeywordsGenerator {
+export abstract class AandB implements IKeywordsGenerator {
     protected negativePhrases: string[];
 
     constructor(private first: string, private second: string) {}
 
     positive(): IKeyword[] {
-        const word = this.first + this.second;
+        const word = `${this.first} ${this.second}`;
         return [
             {
                 word,

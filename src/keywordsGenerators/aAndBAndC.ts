@@ -5,7 +5,7 @@ export abstract class AandBandC implements IKeywordsGenerator {
     constructor(private first: string, private second: string, private third: string) {}
 
     positive(): IKeyword[] {
-        const word = this.first + this.second + this.third;
+        const word = `${this.first} ${this.second} ${this.third}`;
         return [
             {
                 word,
