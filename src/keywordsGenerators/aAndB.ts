@@ -2,7 +2,7 @@ import { IKeywordsGenerator } from './IKeywordsGenerator';
 import { IKeyword, KeywordType } from '../adGroup';
 
 export abstract class AandB implements IKeywordsGenerator {
-    protected negativePhrases: string[];
+    protected negativePhrases: string[] = [];
 
     constructor(private first: string, private second: string) {}
 

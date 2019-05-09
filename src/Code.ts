@@ -3,13 +3,13 @@ import { ISource } from './sources/ISource';
 import { AdGroup } from './adGroup';
 import { getCoreRelatedAdGroups } from './adGroupCreators/core';
 import { getCoreJobTitleRelatedAdGroups } from './adGroupCreators/coreJobTitle';
+import { getCoreExpansionRelatedAdGroups } from './adGroupCreators/coreExpansion';
 
 function myFunction() {
     const source: ISource = new MockSource();
-    let adGroups: AdGroup[] = [];
-
-    // adGroups = adGroups.concat(getCoreRelatedAdGroups(source));
-    adGroups = adGroups.concat(getCoreJobTitleRelatedAdGroups(source));
+    const adGroups: AdGroup[] = getCoreRelatedAdGroups(source)
+        .concat(getCoreJobTitleRelatedAdGroups(source))
+        .concat(getCoreExpansionRelatedAdGroups(source));
 
     return;
 }
