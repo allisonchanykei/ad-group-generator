@@ -16,9 +16,9 @@ export class AdGroup {
     positiveKeywords: IKeyword[];
     negativeKeywords: IKeyword[];
 
-    constructor(keywordsGenerator: IAdGroupGenerator) {
-        this.name = keywordsGenerator.name();
-        this.positiveKeywords = keywordsGenerator.positive();
-        this.negativeKeywords = keywordsGenerator.negative();
+    constructor(adGroupGenerator: IAdGroupGenerator) {
+        this.name = adGroupGenerator.name();
+        this.positiveKeywords = adGroupGenerator.positive();
+        this.negativeKeywords = adGroupGenerator.negative();
     }
 }

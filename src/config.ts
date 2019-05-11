@@ -1,3 +1,5 @@
+import { MaxCPC } from './print';
+
 interface Columns {
     adjective: string;
     core: string;
@@ -12,9 +14,12 @@ export class Config {
     spreadSheetId: string;
     sourceSheetName: string;
     columns: Columns;
+    campaignName: string;
+    maxCPC: MaxCPC;
 
     static createFromForm(form) {
         const config: Config = new Config();
+        config.campaignName = form.campaignName;
         config.numberOfHeaderRows = form.numberOfHeaderRows;
         config.spreadSheetId = form.spreadSheetId;
         config.sourceSheetName = form.sourceSheetName;
@@ -25,6 +30,11 @@ export class Config {
             coreExpansion: form.coreExpansion,
             serviceProvider: form.serviceProvider,
             transactional: form.transactional
+        };
+        config.maxCPC = {
+            phrase: form.phraseMaxCPC,
+            exact: form.exactMaxCPC,
+            broad: form.broadMaxCPC
         };
         return config;
     }
