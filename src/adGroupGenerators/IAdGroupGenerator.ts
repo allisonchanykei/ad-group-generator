@@ -1,6 +1,7 @@
 import { IKeyword } from '../adGroup';
 
-export interface IKeywordsGenerator {
+export interface IAdGroupGenerator {
+    name(): string;
     positive(): IKeyword[];
     negative(): IKeyword[];
 }

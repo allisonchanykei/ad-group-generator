@@ -1,9 +1,9 @@
 import { MockSource } from './sources/mockSource';
 import { ISource } from './sources/ISource';
 import { AdGroup } from './adGroup';
-import { getCoreRelatedAdGroups } from './adGroupCreators/core';
-import { getCoreJobTitleRelatedAdGroups } from './adGroupCreators/coreJobTitle';
-import { getCoreExpansionRelatedAdGroups } from './adGroupCreators/coreExpansion';
+import { getCoreRelatedAdGroups } from './adGroupsCreators/core';
+import { getCoreJobTitleRelatedAdGroups } from './adGroupsCreators/coreJobTitle';
+import { getCoreExpansionRelatedAdGroups } from './adGroupsCreators/coreExpansion';
 import { GoogleSheetSource } from './sources/googleSheetSource';
 import { Config } from './config';
 

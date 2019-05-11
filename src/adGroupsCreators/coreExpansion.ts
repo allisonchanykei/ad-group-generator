@@ -1,8 +1,8 @@
 import { ISource } from '../sources/ISource';
 import { AdGroup } from '../adGroup';
-import { CoreExpansionServiceProvider } from '../keywordsGenerators/coreExpansion/coreExpansionServiceProvider';
-import { CoreExpansionTransactional } from '../keywordsGenerators/coreExpansion/coreExpansionTransactional';
-import { AdjectiveCoreExpansionServiceProvider } from '../keywordsGenerators/coreExpansion/adjectiveCoreExpansionServiceProvider';
+import { CoreExpansionServiceProvider } from '../adGroupGenerators/coreExpansion/coreExpansionServiceProvider';
+import { CoreExpansionTransactional } from '../adGroupGenerators/coreExpansion/coreExpansionTransactional';
+import { AdjectiveCoreExpansionServiceProvider } from '../adGroupGenerators/coreExpansion/adjectiveCoreExpansionServiceProvider';
 
 export function getCoreExpansionRelatedAdGroups(source: ISource): AdGroup[] {
     const adGroups: AdGroup[] = [];

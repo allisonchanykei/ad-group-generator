@@ -1,12 +1,12 @@
 import { ISource } from '../sources/ISource';
 import { AdGroup } from '../adGroup';
-import { Core } from '../keywordsGenerators/core/core';
-import { AdjectiveCore } from '../keywordsGenerators/core/adjectiveCore';
-import { AdjectiveCoreTransactional } from '../keywordsGenerators/core/adjectiveCoreTransactional';
-import { AdjectiveCoreServiceProvider } from '../keywordsGenerators/core/adjectiveCoreServiceProvider';
-import { CoreServiceProvider } from '../keywordsGenerators/core/coreServiceProvider';
-import { CoreServiceProviderTransactional } from '../keywordsGenerators/core/coreServiceProviderTransactional';
-import { CoreTransactional } from '../keywordsGenerators/core/coreTransactional';
+import { Core } from '../adGroupGenerators/core/core';
+import { AdjectiveCore } from '../adGroupGenerators/core/adjectiveCore';
+import { AdjectiveCoreTransactional } from '../adGroupGenerators/core/adjectiveCoreTransactional';
+import { AdjectiveCoreServiceProvider } from '../adGroupGenerators/core/adjectiveCoreServiceProvider';
+import { CoreServiceProvider } from '../adGroupGenerators/core/coreServiceProvider';
+import { CoreServiceProviderTransactional } from '../adGroupGenerators/core/coreServiceProviderTransactional';
+import { CoreTransactional } from '../adGroupGenerators/core/coreTransactional';
 
 export function getCoreRelatedAdGroups(source: ISource): AdGroup[] {
     const adGroups: AdGroup[] = [];

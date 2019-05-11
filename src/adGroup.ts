@@ -1,4 +1,4 @@
-import { IKeywordsGenerator } from './keywordsGenerators/IKeywordsGenerator';
+import { IAdGroupGenerator } from './adGroupGenerators/IAdGroupGenerator';
 
 export enum KeywordType {
     phrase = 'phrase',
@@ -12,10 +12,12 @@ export interface IKeyword {
 }
 
 export class AdGroup {
+    name: string;
     positiveKeywords: IKeyword[];
     negativeKeywords: IKeyword[];
 
-    constructor(keywordsGenerator: IKeywordsGenerator) {
+    constructor(keywordsGenerator: IAdGroupGenerator) {
+        this.name = keywordsGenerator.name();
         this.positiveKeywords = keywordsGenerator.positive();
         this.negativeKeywords = keywordsGenerator.negative();
     }

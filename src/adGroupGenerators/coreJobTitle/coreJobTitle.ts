@@ -1,9 +1,13 @@
-import { IKeywordsGenerator } from '../IKeywordsGenerator';
+import { IAdGroupGenerator } from '../IAdGroupGenerator';
 import { ISource } from '../../sources/ISource';
 import { IKeyword, KeywordType } from '../../adGroup';
 
-export class CoreJobTitle implements IKeywordsGenerator {
+export class CoreJobTitle implements IAdGroupGenerator {
     constructor(private adWord: string, private source: ISource) {}
+
+    name(): string {
+        return this.adWord;
+    }
 
     positive(): IKeyword[] {
         const word = this.adWord;

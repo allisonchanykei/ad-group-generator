@@ -1,9 +1,13 @@
-import { IKeywordsGenerator } from '../IKeywordsGenerator';
+import { IAdGroupGenerator } from '../IAdGroupGenerator';
 import { ISource } from '../../sources/ISource';
 import { IKeyword, KeywordType } from '../../adGroup';
 
-export class Core implements IKeywordsGenerator {
+export class Core implements IAdGroupGenerator {
     constructor(private adWord: string, private source: ISource) {}
+
+    name(): string {
+        return this.adWord;
+    }
 
     positive(): IKeyword[] {
         return [

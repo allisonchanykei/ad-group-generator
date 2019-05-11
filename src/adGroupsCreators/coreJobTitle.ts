@@ -1,9 +1,9 @@
 import { ISource } from '../sources/ISource';
 import { AdGroup } from '../adGroup';
-import { CoreJobTitle } from '../keywordsGenerators/coreJobTitle/coreJobTitle';
-import { AdjectiveCoreJobTitle } from '../keywordsGenerators/coreJobTitle/adjectiveCoreJobTitle';
-import { CoreJobTitleTransactional } from '../keywordsGenerators/coreJobTitle/coreJobTitleTransactional';
-import { AdjectiveCoreJobTitleTransactional } from '../keywordsGenerators/coreJobTitle/adjectiveCoreJobTitleTransactional';
+import { CoreJobTitle } from '../adGroupGenerators/coreJobTitle/coreJobTitle';
+import { AdjectiveCoreJobTitle } from '../adGroupGenerators/coreJobTitle/adjectiveCoreJobTitle';
+import { CoreJobTitleTransactional } from '../adGroupGenerators/coreJobTitle/coreJobTitleTransactional';
+import { AdjectiveCoreJobTitleTransactional } from '../adGroupGenerators/coreJobTitle/adjectiveCoreJobTitleTransactional';
 
 export function getCoreJobTitleRelatedAdGroups(source: ISource): AdGroup[] {
     const adGroups: AdGroup[] = [];
