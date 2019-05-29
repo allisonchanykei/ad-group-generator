@@ -23,7 +23,7 @@ export class Print {
         let output = '';
         this.adGroup.positiveKeywords.map(keyword => {
             const maxCPC = this.getMaxCPC(keyword.type);
-            return `${this.campaignName}, ${this.adGroup.name}, ${keyword.word}, ${keyword.type}, ${maxCPC}${Print.newLine}`;
+            output += `${this.campaignName}, ${this.adGroup.name}, ${keyword.word}, ${keyword.type}, ${maxCPC}${Print.newLine}`;
         });
         return output;
     }
