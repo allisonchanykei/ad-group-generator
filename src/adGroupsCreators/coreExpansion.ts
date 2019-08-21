@@ -6,16 +6,16 @@ import { AdjectiveCoreExpansionServiceProvider } from '../adGroupGenerators/core
 
 export function getCoreExpansionRelatedAdGroups(source: ISource): AdGroup[] {
     const adGroups: AdGroup[] = [];
-    source.coreExpansions.map(coreExpansion => {
-        source.serviceProviders.map(serviceProvider => {
+    source.coreExpansions.forEach(coreExpansion => {
+        source.serviceProviders.forEach(serviceProvider => {
             adGroups.push(new AdGroup(new CoreExpansionServiceProvider(coreExpansion, serviceProvider, source)));
 
-            source.adjectives.map(adjective => {
+            source.adjectives.forEach(adjective => {
                 adGroups.push(new AdGroup(new AdjectiveCoreExpansionServiceProvider(coreExpansion, adjective, serviceProvider)));
             });
         });
 
-        source.transactionals.map(transactional => {
+        source.transactionals.forEach(transactional => {
             adGroups.push(new AdGroup(new CoreExpansionTransactional(coreExpansion, transactional)));
         });
     });

@@ -10,30 +10,30 @@ import { CoreTransactional } from '../adGroupGenerators/core/coreTransactional';
 
 export function getCoreRelatedAdGroups(source: ISource): AdGroup[] {
     const adGroups: AdGroup[] = [];
-    source.cores.map(core => {
+    source.cores.forEach(core => {
         adGroups.push(new AdGroup(new Core(core, source)));
 
-        source.adjectives.map(adjective => {
+        source.adjectives.forEach(adjective => {
             adGroups.push(new AdGroup(new AdjectiveCore(core, adjective, source)));
 
-            source.transactionals.map(transactional => {
+            source.transactionals.forEach(transactional => {
                 adGroups.push(new AdGroup(new AdjectiveCoreTransactional(core, adjective, transactional)));
             });
 
-            source.serviceProviders.map(serviceProvider => {
+            source.serviceProviders.forEach(serviceProvider => {
                 adGroups.push(new AdGroup(new AdjectiveCoreServiceProvider(core, adjective, serviceProvider)));
             });
         });
 
-        source.serviceProviders.map(serviceProvider => {
+        source.serviceProviders.forEach(serviceProvider => {
             adGroups.push(new AdGroup(new CoreServiceProvider(core, serviceProvider, source)));
 
-            source.transactionals.map(transactional => {
+            source.transactionals.forEach(transactional => {
                 adGroups.push(new AdGroup(new CoreServiceProviderTransactional(core, serviceProvider, transactional)));
             });
         });
 
-        source.transactionals.map(transactional => {
+        source.transactionals.forEach(transactional => {
             adGroups.push(new AdGroup(new CoreTransactional(core, transactional, source)));
         });
     });

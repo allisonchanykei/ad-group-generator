@@ -17,35 +17,39 @@ export class Print {
     constructor(private campaignName: string, private adGroup: AdGroup, private maxCPC: MaxCPC) {}
 
     static positiveKeywordHeader(): string {
-        return `Campaign Name, Ad Group, Keyword, Keyword Type, Max CPC ${Print.newLine}`;
+        return `Campaign Name, Ad Group, Combination, Keyword, Keyword Type, Max CPC ${Print.newLine}`;
     }
     positiveKeywords(): string {
         let output = '';
-        this.adGroup.positiveKeywords.map(keyword => {
+        this.adGroup.positiveKeywords.forEach(keyword => {
             const maxCPC = this.getMaxCPC(keyword.type);
-            output += `${this.campaignName}, ${this.adGroup.name}, ${keyword.word}, ${keyword.type}, ${maxCPC}${Print.newLine}`;
+            output += `${this.campaignName}, ${this.adGroup.name}, ${this.adGroup.type}, ${keyword.word}, ${
+                keyword.type
+            }, ${maxCPC}${Print.newLine}`;
         });
         return output;
     }
 
     static negativeKeywordHeader(): string {
-        return `Campaign Name, Ad Group, Keyword, Criterion Type ${Print.newLine}`;
+        return `Campaign Name, Ad Group, Combination, Keyword, Criterion Type ${Print.newLine}`;
     }
 
     negativeKeywords(): string {
         let output = '';
-        this.adGroup.negativeKeywords.map(keyword => {
-            output += `${this.campaignName}, ${this.adGroup.name}, ${keyword.word}, Negative ${keyword.type}${Print.newLine}`;
+        this.adGroup.negativeKeywords.forEach(keyword => {
+            output += `${this.campaignName}, ${this.adGroup.name}, ${this.adGroup.type}, ${keyword.word}, Negative ${
+                keyword.type
+            }${Print.newLine}`;
         });
         return output;
     }
 
     static adGroupHeader(): string {
-        return `Campaign Name, Ad Group, Status ${Print.newLine}`;
+        return `Campaign Name, Ad Group, Combination, Status ${Print.newLine}`;
     }
 
     adGroupRow(): string {
-        return `${this.campaignName}, ${this.adGroup.name}, Active ${Print.newLine}`;
+        return `${this.campaignName}, ${this.adGroup.name}, ${this.adGroup.type}, Active ${Print.newLine}`;
     }
 
     private getMaxCPC(type: KeywordType): number {

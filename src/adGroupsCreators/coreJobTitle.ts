@@ -7,18 +7,18 @@ import { AdjectiveCoreJobTitleTransactional } from '../adGroupGenerators/coreJob
 
 export function getCoreJobTitleRelatedAdGroups(source: ISource): AdGroup[] {
     const adGroups: AdGroup[] = [];
-    source.coreJobTitles.map(coreJobTitle => {
+    source.coreJobTitles.forEach(coreJobTitle => {
         adGroups.push(new AdGroup(new CoreJobTitle(coreJobTitle, source)));
 
-        source.adjectives.map(adjective => {
+        source.adjectives.forEach(adjective => {
             adGroups.push(new AdGroup(new AdjectiveCoreJobTitle(coreJobTitle, adjective, source)));
 
-            source.transactionals.map(transactional => {
+            source.transactionals.forEach(transactional => {
                 adGroups.push(new AdGroup(new AdjectiveCoreJobTitleTransactional(coreJobTitle, adjective, transactional)));
             });
         });
 
-        source.transactionals.map(transactional => {
+        source.transactionals.forEach(transactional => {
             adGroups.push(new AdGroup(new CoreJobTitleTransactional(coreJobTitle, transactional, source)));
         });
     });

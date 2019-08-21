@@ -44,7 +44,7 @@ function printResults(adGroups: AdGroup[], config: Config): Result {
     let postiveKeywords = Print.positiveKeywordHeader();
     let negativeKeywords = Print.negativeKeywordHeader();
 
-    adGroups.map(adGroup => {
+    adGroups.forEach(adGroup => {
         const print = new Print(config.campaignName, adGroup, config.maxCPC);
         adGroupSheet += print.adGroupRow();
         postiveKeywords += print.positiveKeywords();
